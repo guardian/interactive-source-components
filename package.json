@@ -1,0 +1,27 @@
+{
+  "name": "@guardian/interactive-source-components",
+  "version": "0.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "ed.gargan@guardian.co.uk",
+  "exports": {
+    "./button.css": "./dist/button.css",
+    "./icons.css": "./dist/icons.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@emotion/react": "^11.14.0",
+    "postcss": "^8.5.6",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-nested": "^7.0.2",
+    "@guardian/source": "^11.1.0",
+    "@prettier/sync": "^0.6.1",
+    "esbuild": "^0.25.8",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
+    "react-dom": "^18.3.1"
+  }
+}
