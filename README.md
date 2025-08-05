@@ -11,7 +11,7 @@ An NPM package containing simplified CSS-only versions of the React components m
 Install the package using NPM or your package manager of choice.
 
 ```bash
-npm install @guardian/interactive-source-components
+npm install git+git@github.com:guardian/interactive-source-components.git
 ```
 
 The package exports CSS files for each component, eg.
@@ -24,8 +24,8 @@ For example, using these styles in a Svelte component will look something like t
 
 ```svelte
 <script>
-  import "interactive-source-components/button.css"
-  import "interactive-source-components/icons.css"
+  import "@guardian/interactive-source-components/button.css"
+  import "@guardian/interactive-source-components/icons.css"
 </script>
 
 <button class="src-button src-button--tertiary">
