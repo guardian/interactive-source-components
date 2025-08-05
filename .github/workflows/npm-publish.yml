@@ -1,0 +1,55 @@
+name: Publish NPM package
+
+on:
+  push:
+    tags:
+      - "[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]-[0-9]+"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      # For GitHub release
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Extract tag version
+        id: version
+        run: |
+          version="${GITHUB_REF#refs/tags/}"
+          echo "version=$version" >> $GITHUB_OUTPUT
+
+      - name: Inject version into package.json
+        run: |
+          tmp=$(mktemp)
+          jq '. + {version: "${{ steps.version.outputs.version }}"}' package.json > "$tmp" && mv "$tmp" package.json
+          cat package.json
+
+      - name: Run build
+        run: npm run build
+
+      # - name: Publish to NPM
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          body: |
+            🚀 Published `@guardian/interactive-source-components@${{ steps.version.outputs.version }}`

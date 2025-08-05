@@ -10,7 +10,9 @@
   "files": [
     "dist"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "node ./src/button/generate.js && node ./src/icons/generate.js"
+  },
   "license": "ISC",
   "devDependencies": {
     "@emotion/react": "^11.14.0",
