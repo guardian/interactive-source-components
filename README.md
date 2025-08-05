@@ -3,7 +3,7 @@
 An NPM package containing simplified CSS-only versions of the React components made available in the [@guardian/source](https://github.com/guardian/csnx/tree/main/libs/%40guardian/source) library.
 
 > [!NOTE]  
-> This library is very young and likely to see significant breaking changes.
+> This library is VWIP and likely to see significant breaking changes.
 > Reach out to ed.gargan@guardian.co.uk with any queries.
 
 ## Getting started
@@ -35,7 +35,7 @@ Click me
 ```
 
 > [!WARNING]  
-> These CSS files contain classes that cover all of the possible configuration options for each component, eg. `src-button--small`, `src-button--tertiary`.
+> These CSS files contain classes that cover many of the possible configuration options for each component, eg. `src-button--small`, `src-button--tertiary`.
 >
 > Ensure that your build system is set up to remove unused CSS classes, such as using the [@fullhuman/postcss-purgecss](https://www.npmjs.com/package/@fullhuman/postcss-purgecss) PostCSS plugin.
 
@@ -48,7 +48,7 @@ Click me
 Use the `src-button` class to style your buttons in the default Guardian style. By default, buttons
 are `medium` sized, and use the `primary` priority.
 
-The following classes are available to configure the style and size of the button.
+The following classes are available to configure the style and size of the button. To use these classes, combine them with src-button, eg. `<button class="src-button src-button--tertiary">`.
 
 | Class                   | Description                                         | Default |
 | ----------------------- | --------------------------------------------------- | ------- |
