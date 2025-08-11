@@ -29,8 +29,8 @@ For example, using these styles in a Svelte component will look something like t
 </script>
 
 <button class="src-button src-button--tertiary">
-<div class="src-icon--add-to-basket"></div>
-Click me
+  <div class="src-icon--add-to-basket"></div>
+  Click me
 </button>
 ```
 
@@ -39,55 +39,19 @@ Click me
 >
 > Ensure that your build system is set up to remove unused CSS classes, such as using the [@fullhuman/postcss-purgecss](https://www.npmjs.com/package/@fullhuman/postcss-purgecss) PostCSS plugin.
 
-## Buttons
+## Component documentation
 
-```html
-<button class="src-button">Click me</button>
-```
+Below is a list of all of the components currently offered by this library, with links to
+documentation for each.
 
-Use the `src-button` class to style your buttons in the default Guardian style. By default, buttons
-are `medium` sized, and use the `primary` priority.
+- [Button](./src/button/README.md)
+- [Icons](./src/icons/README.md)
+- [Label](./src/label/README.md)
+- [Text Input](./src/text-input/README.md)
 
-The following classes are available to configure the style and size of the button. To use these classes, combine them with src-button, eg. `<button class="src-button src-button--tertiary">`.
+### Coming soon 🏗️
 
-| Class                   | Description                                         | Default |
-| ----------------------- | --------------------------------------------------- | ------- |
-| `src-button--default`   | Dark background, light text.                        | ✅      |
-| `src-button--secondary` | Pale background, dark text.                         |         |
-| `src-button--tertiary`  | Transparent background, dark border and text.       |         |
-| `src-button--subdued`   | Transparent background, no border, underlined text. |         |
-| `src-button--medium`    | Smaller than normal.                                | ✅      |
-| `src-button--small`     | Smaller than normal.                                |         |
-| `src-button--xsmall`    | Extra-smaller than normal.                          |         |
-
-Note that many of Button's features in Source (icons, loading state, etc.) are not currently
-supported.
-
-<img width="16" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg" /> [Source Storybook docs](https://guardian.github.io/storybooks/?path=/docs/source_react-components-button--docs)&nbsp;&nbsp;<img style="margin-bottom: -3px" width="18" src="https://zeroheight.com/favicon.ico" /> [Source design system docs](https://theguardian.design/2a1e5182b/p/435225-button)
-
-## Icons
-
-```html
-<div class="src-icon--add-to-basket"></div>
-```
-
-Icon classes will draw an icon into the given element using `mask-image` and a data URL containing
-the SVG markup, like so.
-
-<!-- prettier-ignore -->
-```css
-mask-image: url(
-  data:image/svg+xml,
-  %3Csvgxmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"%3E%3Cpathd="..."/%3E%3C/svg%3E
-);
-```
-
-The color of the icon is given by `background-color`, which is
-[`currentcolor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword) by default.
-
-Make sure to set an appropriate `role` and `aria-label` on your element if the icon should
-be exposed to screenreaders.
-
-See Source's documentation for a full list of available icons.
-
-<img width="16" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg" /> [Source Storybook docs](https://guardian.github.io/storybooks/?path=/docs/source_react-components-button--docs)&nbsp;&nbsp;<img width="16" src="https://zeroheight.com/favicon.ico" /> [Source design system docs](https://theguardian.design/2a1e5182b/p/96fb61-iconography)
+- Spinner
+- Checkbox
+- Radio
+- Select

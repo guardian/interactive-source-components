@@ -1,3 +1,6 @@
+import * as fs from "fs";
+import * as path from "path";
+
 import {
   loadSourceContext,
   classTuple,
@@ -6,9 +9,6 @@ import {
   tidyCss,
   getFullPathFor,
 } from "../utils.js";
-
-import * as fs from "fs";
-import * as path from "path";
 
 (async () => {
   const context = loadSourceContext(
