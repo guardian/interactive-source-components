@@ -11,7 +11,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "node ./src/button/generate.js && node ./src/icons/generate.js"
+    "build": "node ./scripts/run-generators.js",
+    "build-watch": "node ./scripts/run-generators-watch.js"
   },
   "license": "ISC",
   "devDependencies": {
