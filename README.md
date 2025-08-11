@@ -15,6 +15,7 @@ documentation for each.
 - [Icons](./src/icons/README.md)
 - [Label](./src/label/README.md)
 - [Text Input](./src/text-input/README.md)
+- [Spinner](./src/spinner/README.md)
 
 ## Getting started
 
@@ -55,4 +56,3 @@ For example, using these styles in a Svelte component will look something like t
 - Radio
 - Select
 - Input success/error states
-- Spinner

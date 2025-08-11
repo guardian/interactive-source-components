@@ -1,0 +1,105 @@
+.src-spinner {
+  --bg: #c1d8fc;
+  --fg: #052962;
+  display: inline-block;
+  position: relative;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='15' stroke='white' stroke-width='10' fill='none'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  animation:
+    spinnerBackgroundColor 3.5s steps(1, jump-end) infinite,
+    spinnerRotate 2.5s linear infinite;
+}
+.src-spinner:after,
+.src-spinner:before {
+  content: "";
+  height: inherit;
+  width: inherit;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath d='M15,50 L15,0 A15,15 0 1,1 15,30 L15,15 Z'/%3E%3C/svg%3E");
+  position: absolute;
+}
+.src-spinner:after {
+  background: var(--bg);
+  animation:
+    spinnerSegmentRotate 3.5s ease-in-out infinite calc(3.5s * 0.5),
+    spinnerZIndexCycle1 3.5s steps(1, end) infinite;
+}
+.src-spinner:before {
+  background: var(--fg);
+  animation:
+    spinnerSegmentRotate 3.5s ease-in-out infinite,
+    spinnerZIndexCycle2 3.5s steps(1, end) infinite;
+}
+@keyframes spinnerBackgroundColor {
+  25% {
+    background-color: var(--fg);
+  }
+  75% {
+    background-color: var(--bg);
+  }
+}
+@keyframes spinnerRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinnerSegmentRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinnerZIndexCycle1 {
+  0% {
+    z-index: 2;
+  }
+  25% {
+    z-index: 1;
+  }
+  75% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 2;
+  }
+}
+@keyframes spinnerZIndexCycle2 {
+  0% {
+    z-index: 1;
+  }
+  25% {
+    z-index: 2;
+  }
+  75% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 1;
+  }
+}
+
+.src-spinner--medium {
+  width: 30px;
+  height: 30px;
+}
+
+.src-spinner--small {
+  width: 26px;
+  height: 26px;
+}
+
+.src-spinner--xsmall {
+  width: 20px;
+  height: 20px;
+}

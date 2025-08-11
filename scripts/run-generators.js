@@ -5,7 +5,9 @@ const args = process.argv.slice(2);
 
 let pattern;
 
-if (args.length > 0) {
+if (args.length === 1) {
+  pattern = `./src/${args[0]}/generate.js`;
+} else if (args.length > 0) {
   const joined = args.map((name) => name.replace(/[|()]/g, "")).join("|");
   pattern = `./src/(${joined})/generate.js`;
 } else {
