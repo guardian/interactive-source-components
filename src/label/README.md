@@ -15,10 +15,10 @@
 <input type="email" id="email" class="src-text-input" />
 ```
 
-<img width="16" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg" /> [Source Storybook docs](https://guardian.github.io/storybooks/?path=/docs/source_react-components-label--docs)&nbsp;&nbsp;<img width="16" src="https://zeroheight.com/favicon.ico" /> [Source design system docs](https://theguardian.design/2a1e5182b/p/437902-text-input-field)
-
 Use the `src-label` class on `<label>` elements (or other text elements) to style labels associated
 with inputs, such as [Text input](./src/text-input/README.md), as shown above.
+
+<img width="16" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg" /> [Source Storybook docs](https://guardian.github.io/storybooks/?path=/docs/source_react-components-label--docs)&nbsp;&nbsp;<img width="16" src="https://zeroheight.com/favicon.ico" /> [Source design system docs](https://theguardian.design/2a1e5182b/p/437902-text-input-field)
 
 ### Variants
 

@@ -8,7 +8,7 @@ An NPM package containing simplified CSS-only versions of the React components m
 
 ## Components
 
-Below is a list of all of the components currently offered by this library, with links to
+Below is a list of all of the components currently offered by this library (more coming soon!), with links to
 documentation for each.
 
 - [Button](./src/button/README.md)
@@ -49,10 +49,3 @@ For example, using these styles in a Svelte component will look something like t
 > These CSS files contain classes that cover many of the possible configuration options for each component, eg. `src-button--small`, `src-button--tertiary`.
 >
 > Ensure that your build system is set up to remove unused CSS classes, such as using the [@fullhuman/postcss-purgecss](https://www.npmjs.com/package/@fullhuman/postcss-purgecss) PostCSS plugin.
-
-### Coming soon 🏗️
-
-- Checkbox
-- Radio
-- Select
-- Input success/error states
