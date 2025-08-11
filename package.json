@@ -5,7 +5,9 @@
   "author": "ed.gargan@guardian.co.uk",
   "exports": {
     "./button.css": "./dist/button.css",
-    "./icons.css": "./dist/icons.css"
+    "./icons.css": "./dist/icons.css",
+    "./label.css": "./dist/label.css",
+    "./text-input.css": "./dist/text-input.css"
   },
   "files": [
     "dist"

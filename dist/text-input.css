@@ -1,0 +1,86 @@
+.src-text-input {
+  box-sizing: border-box;
+
+  font-family:
+    GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: normal;
+  --source-text-decoration-thickness: 2px;
+  height: 44px;
+  color: #121212;
+  background-color: #ffffff;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  padding: 0 8px;
+
+  width: 100%;
+}
+
+.src-text-input:focus {
+  outline: 0;
+}
+
+html:not(.src-focus-disabled) .src-text-input:focus {
+  box-shadow: 0 0 0 3px #0077b6;
+}
+
+.src-text-input:invalid {
+  /* Remove styling of invalid input elements that gets applied in Firefox */
+  box-shadow: none;
+}
+
+/*
+			We automatically apply error styling to fields in an invalid state,
+			but stop short of applying it to empty required fields.
+			*/
+
+.src-text-input:invalid[value]:not([value=""]) {
+  border: 2px solid #c70000;
+  border-radius: 4px;
+  color: #121212;
+  margin-top: 0;
+}
+
+.src-text-input--small {
+  font-family:
+    GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: normal;
+  --source-text-decoration-thickness: 2px;
+  height: 36px;
+}
+
+.src-text-input--width-fluid {
+  width: 100%;
+}
+
+.src-text-input--width-30 {
+  width: 40ex;
+  max-width: 100%; /* prevent overflow on narrow viewports */
+}
+
+.src-text-input--width-10 {
+  width: 18ex;
+}
+
+.src-text-input--width-4 {
+  width: 9ex;
+}
+
+.src-label + .src-text-input {
+  margin-top: 4px;
+}
+
+label:has(.src-label) + .src-text-input {
+  margin-top: 4px;
+}
+
+label:has(.src-label__supporting) + .src-text-input {
+  margin-top: 6px;
+}

@@ -1,0 +1,49 @@
+.src-label {
+  font-family:
+    GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  font-weight: 700;
+  font-style: normal;
+  --source-text-decoration-thickness: 2px;
+  color: #121212;
+  display: block;
+}
+
+.src-label--small {
+  font-family:
+    GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-weight: 700;
+  font-style: normal;
+  --source-text-decoration-thickness: 2px;
+}
+
+.src-label__optional {
+  font-family:
+    GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: normal;
+  --source-text-decoration-thickness: 2px;
+  color: #707070;
+  font-style: italic;
+}
+
+.src-label__supporting {
+  font-family:
+    GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: normal;
+  --source-text-decoration-thickness: 2px;
+  color: #707070;
+  margin: 2px 0 0;
+}

@@ -86,20 +86,27 @@ export function getDistPath(moduleDir) {
  * @param {string} className
  * @param {string|Array|Object} styles
  */
-export function classTuple(className, styles) {
+export function classTuple(className, ...styles) {
   let joinedStyles = "";
 
   if (Array.isArray(styles)) {
     styles.forEach((item) => {
-      if (typeof item?.styles === "string") {
+      if (typeof item === "string") {
+        joinedStyles += item;
+      } else if (typeof item?.styles === "string") {
         joinedStyles += item.styles;
       }
     });
   } else if (typeof styles === "object" && typeof styles?.styles === "string") {
     joinedStyles = styles.styles;
+  } else {
+    joinedStyles = styles;
   }
 
-  return [className, `.${className} {${joinedStyles}}`];
+  return /** @type {[string, string]} */ ([
+    className,
+    `.${className} {${joinedStyles}}`,
+  ]);
 }
 
 /**
@@ -139,4 +146,21 @@ export function camelToKebab(camelCaseName) {
     /[A-Z]+(?![a-z])|[A-Z]/g,
     ($, ofs) => (ofs ? "-" : "") + $.toLowerCase(),
   );
+}
+
+/**
+ * @param {Array<Array<string>>} classes
+ * @param {string} distPath
+ */
+export async function writeLabelClasses(classes, distPath) {
+  let css = "";
+
+  classes.forEach(([_, classDecl]) => {
+    css += classDecl + "\n\n";
+  });
+
+  css = await tidyCss(css);
+
+  fs.mkdirSync(path.dirname(distPath), { recursive: true });
+  fs.writeFileSync(distPath, css);
 }
