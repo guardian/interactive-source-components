@@ -1,6 +1,10 @@
 ## Icons
 
 ```html
+<script>
+  import "@guardian/interactive-source-components/icons.css";
+</script>
+
 <div class="src-icon--add-to-basket"></div>
 ```
 

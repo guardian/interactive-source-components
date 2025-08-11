@@ -1,11 +1,17 @@
 ## Buttons
 
 ```html
+<script>
+  import "@guardian/interactive-source-components/button.css";
+</script>
+
 <button class="src-button">Click me</button>
 ```
 
 Use the `src-button` class to style your buttons in the default Guardian style. By default, buttons
 are `medium` sized, and use the `primary` priority.
+
+### Variants
 
 The following classes are available to configure the style and size of the button. To use these classes, combine them with src-button, eg. `<button class="src-button src-button--tertiary">`.
 

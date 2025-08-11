@@ -21,6 +21,7 @@ import {
       context.widthFluid.styles,
     ),
 
+    classTuple("src-text-input--small", context.inputSizeMedium.styles),
     classTuple("src-text-input--small", context.inputSizeSmall.styles),
 
     classTuple("src-text-input--width-fluid", context.widthFluid.styles),

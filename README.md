@@ -51,7 +51,8 @@ documentation for each.
 
 ### Coming soon 🏗️
 
-- Spinner
 - Checkbox
 - Radio
 - Select
+- Input success/error states
+- Spinner
