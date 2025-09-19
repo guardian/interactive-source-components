@@ -86,22 +86,27 @@ export function getDistPath(moduleDir) {
  * @param {string} className
  * @param {string|Array|Object} styles
  */
-export function classTuple(className, ...styles) {
+export function classTuple(className, ...restStyles) {
   let joinedStyles = "";
 
-  if (Array.isArray(styles)) {
-    styles.forEach((item) => {
-      if (typeof item === "string") {
-        joinedStyles += item;
-      } else if (typeof item?.styles === "string") {
-        joinedStyles += item.styles;
-      }
-    });
-  } else if (typeof styles === "object" && typeof styles?.styles === "string") {
-    joinedStyles = styles.styles;
-  } else {
-    joinedStyles = styles;
-  }
+  restStyles.forEach((styles) => {
+    if (Array.isArray(styles)) {
+      styles.forEach((item) => {
+        if (typeof item === "string") {
+          joinedStyles += item;
+        } else if (typeof item?.styles === "string") {
+          joinedStyles += item.styles;
+        }
+      });
+    } else if (
+      typeof styles === "object" &&
+      typeof styles?.styles === "string"
+    ) {
+      joinedStyles = styles.styles;
+    } else {
+      joinedStyles = styles;
+    }
+  });
 
   return /** @type {[string, string]} */ ([
     className,

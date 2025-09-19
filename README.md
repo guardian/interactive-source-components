@@ -17,6 +17,13 @@ documentation for each.
 - [Text Input](./src/text-input/README.md)
 - [Spinner](./src/spinner/README.md)
 
+### Coming soon 🏗️
+
+- Accessibility foundations (focus rings, visually-hidden, etc)
+- Select
+- Checkboxes
+- Radio buttons
+
 ## Getting started
 
 Install the package using NPM or your package manager of choice.
