@@ -1,0 +1,22 @@
+{
+  "connector": {
+    "name": "local"
+  },
+  "hints": {
+    "compat-api/css": "error"
+  },
+  "formatters": ["summary"],
+  "parsers": ["css"],
+  "browserslist": [
+    "Chrome >= 70",
+    "ChromeAndroid >= 119",
+    "Firefox >= 78",
+    "FirefoxAndroid >= 119",
+    "Edge >= 109",
+    "Safari >= 11.1",
+    "iOS >= 10.3",
+    "Opera >= 95",
+    "OperaMobile >= 73",
+    "Samsung >= 17"
+  ]
+}

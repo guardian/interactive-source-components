@@ -6,6 +6,7 @@ import prettier from "prettier";
 import postcss from "postcss";
 import postcssNested from "postcss-nested";
 import postcssMergeSelectors from "postcss-combine-duplicated-selectors";
+import postcssAutoprefixer from "autoprefixer";
 
 /**
  * @param {string} [startDir]
@@ -134,6 +135,7 @@ export async function tidyCss(css) {
   const postcssResult = await postcss([
     postcssNested(),
     postcssMergeSelectors(),
+    postcssAutoprefixer(),
   ]).process(css, { from: undefined });
 
   css = postcssResult.css;

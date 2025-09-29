@@ -7,8 +7,11 @@
   width: 30px;
   height: 30px;
   background-color: var(--bg);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='15' stroke='white' stroke-width='10' fill='none'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='15' stroke='white' stroke-width='10' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
   mask-size: cover;
   animation:
     spinnerBackgroundColor 3.5s steps(1, jump-end) infinite,
@@ -19,8 +22,11 @@
   content: "";
   height: inherit;
   width: inherit;
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath d='M15,50 L15,0 A15,15 0 1,1 15,30 L15,15 Z'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath d='M15,50 L15,0 A15,15 0 1,1 15,30 L15,15 Z'/%3E%3C/svg%3E");
   position: absolute;
 }
