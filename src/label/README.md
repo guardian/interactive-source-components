@@ -38,3 +38,8 @@ your markup may affect how they're rendered: follow the example above if in doub
 | ----------------------- | ----------------------------------------------------- |
 | `src-label__optional`   | Styles the _optional_ label beside the main label.    |
 | `src-label__supporting` | Styles the _supporting_ label beneath the main label. |
+
+### Accessibility
+
+- Always use `<label>` elements with proper `for` attributes to associate them with form controls
+- Use the `src-label__optional` sub-element to communicate optional fields

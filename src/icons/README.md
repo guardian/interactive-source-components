@@ -31,5 +31,6 @@ mask-image: url(
 The color of the icon is given by `background-color`, which is
 [`currentcolor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword) by default.
 
-Make sure to set an appropriate `role` and `aria-label` on your element if the icon should
-be exposed to screenreaders.
+### Accessibility
+
+- Make sure to set an appropriate `role` and `aria-label` on your element if the icon should be exposed to screenreaders.

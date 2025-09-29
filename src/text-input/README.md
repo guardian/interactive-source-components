@@ -38,3 +38,12 @@ that's sized according to the contents of the label (`src-label__optional`,
 `src-label__supporting`).
 
 For these styles to work, make sure your markup matches the example shown above, if possible.
+
+### Accessibility
+
+- Always associate text inputs with a `<label>` using the `for` and `id` attributes
+- The component includes proper focus states with a visible blue box-shadow
+- Invalid inputs are automatically styled with a red border for visual feedback
+- Use appropriate input types (`email`, `tel`, `url`, etc.) to provide the correct keyboard on mobile devices
+- Consider using the `required` attribute for mandatory fields
+- Provide supporting text via `src-label__supporting` to explain input requirements

@@ -29,3 +29,11 @@ The following classes are available to configure the style and size of the butto
 
 Note that many of Button's features in Source (icons, loading state, etc.) are not currently
 supported.
+
+### Accessibility
+
+- The component includes proper focus states with a visible outline
+- Use semantic `<button>` elements for actions and `<a>` elements styled as buttons for navigation
+- Always provide descriptive text content for buttons
+- The `:disabled` state includes proper cursor styling
+- Keyboard navigation is fully supported
