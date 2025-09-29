@@ -85,9 +85,31 @@ export function getDistPath(moduleDir) {
 
 /**
  * @param {string} className
- * @param {string|Array|Object} styles
+ * @param {string|Array|Object} restStyles
+ * @deprecated Use `makeDecl` instead
  */
 export function classTuple(className, ...restStyles) {
+  let joinedStyles = parseEmotion(...restStyles);
+
+  return /** @type {[string, string]} */ ([
+    className,
+    `.${className} {${joinedStyles}}`,
+  ]);
+}
+
+/**
+ * @param {string} selector
+ * @param {string|Array|Object} restStyles
+ */
+export function makeDecl(selector, ...restStyles) {
+  let joinedStyles = parseEmotion(...restStyles);
+  return `${selector} {${joinedStyles}}`;
+}
+
+/**
+ * @param {string|Array|Object} restStyles
+ */
+export function parseEmotion(...restStyles) {
   let joinedStyles = "";
 
   restStyles.forEach((styles) => {
@@ -103,16 +125,13 @@ export function classTuple(className, ...restStyles) {
       typeof styles === "object" &&
       typeof styles?.styles === "string"
     ) {
-      joinedStyles = styles.styles;
+      joinedStyles += styles.styles;
     } else {
-      joinedStyles = styles;
+      joinedStyles += styles;
     }
   });
 
-  return /** @type {[string, string]} */ ([
-    className,
-    `.${className} {${joinedStyles}}`,
-  ]);
+  return joinedStyles;
 }
 
 /**
@@ -156,14 +175,19 @@ export function camelToKebab(camelCaseName) {
 }
 
 /**
- * @param {Array<Array<string>>} classes
+ * @param {Array<Array<string>> | Array<string>} decls
  * @param {string} distPath
  */
-export async function writeLabelClasses(classes, distPath) {
+export async function writeLabelClasses(decls, distPath) {
   let css = "";
 
-  classes.forEach(([_, classDecl]) => {
-    css += classDecl + "\n\n";
+  decls.forEach((decl) => {
+    // TODO: remove this once we've removed classTuple
+    if (Array.isArray(decl)) {
+      css += decl[1] + "\n\n";
+    } else {
+      css += decl + "\n\n";
+    }
   });
 
   css = await tidyCss(css);

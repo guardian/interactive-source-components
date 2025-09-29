@@ -8,7 +8,8 @@
     "./icons.css": "./dist/icons.css",
     "./label.css": "./dist/label.css",
     "./spinner.css": "./dist/spinner.css",
-    "./text-input.css": "./dist/text-input.css"
+    "./text-input.css": "./dist/text-input.css",
+    "./checkbox.css": "./dist/checkbox.css"
   },
   "files": [
     "dist"

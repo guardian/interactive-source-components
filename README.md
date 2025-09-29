@@ -16,12 +16,12 @@ documentation for each.
 - [Label](./src/label/README.md)
 - [Text Input](./src/text-input/README.md)
 - [Spinner](./src/spinner/README.md)
+- [Checkbox](./src/checkbox/README.md)
 
 ### Coming soon 🏗️
 
 - Accessibility foundations (focus rings, visually-hidden, etc)
 - Select
-- Checkboxes
 - Radio buttons
 
 ## Getting started
