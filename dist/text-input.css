@@ -44,7 +44,7 @@ html:not(.src-focus-disabled) .src-text-input:focus {
   margin-top: 0;
 }
 
-.src-text-input--small {
+.src-text-input--medium {
   font-family:
     GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
     Arial, "Lucida Grande", sans-serif;
@@ -54,7 +54,9 @@ html:not(.src-focus-disabled) .src-text-input:focus {
   font-style: normal;
   --source-text-decoration-thickness: 2px;
   height: 44px;
+}
 
+.src-text-input--small {
   font-family:
     GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica,
     Arial, "Lucida Grande", sans-serif;

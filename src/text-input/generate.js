@@ -21,7 +21,7 @@ import {
       context.widthFluid.styles,
     ),
 
-    classTuple("src-text-input--small", context.inputSizeMedium.styles),
+    classTuple("src-text-input--medium", context.inputSizeMedium.styles),
     classTuple("src-text-input--small", context.inputSizeSmall.styles),
 
     classTuple("src-text-input--width-fluid", context.widthFluid.styles),
@@ -37,6 +37,7 @@ import {
         `}\n`,
     ],
     [
+      // TODO: can we do without :has?
       "src-text-input",
       `label:has(.src-label) + .src-text-input {\n` +
         `${context.labelMargin.styles}` +
