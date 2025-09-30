@@ -5,7 +5,7 @@
   import "@guardian/interactive-source-components/icons.css";
 </script>
 
-<div class="src-icon--add-to-basket"></div>
+<div class="src-icon--add-to-basket" style="width: 36px;"></div>
 ```
 
 Add `src-icon--add-to-basket` (changing `add-to-basket` to the name of your desired icon) to a
