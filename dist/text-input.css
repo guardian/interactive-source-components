@@ -89,7 +89,7 @@ html:not(.src-focus-disabled) .src-text-input:focus {
   margin-top: 4px;
 }
 
-label:has(.src-label) + .src-text-input {
+label:.src-label + .src-text-input {
   margin-top: 4px;
 }
 

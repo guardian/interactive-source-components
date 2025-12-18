@@ -7,6 +7,7 @@ import {
   getFullPathFor,
   writeLabelClasses,
   makeDecl,
+  removeBacktickMarkupWhitespace,
 } from "../utils.js";
 
 (async () => {
@@ -15,13 +16,10 @@ import {
   );
 
   // NOTE: this isn't a pixel-perfect match of the source checkbox, but it's close enough
-  const tickSvg = `
+  const tickSvg = removeBacktickMarkupWhitespace(`
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
   <path d='M 8,16.5 L13,21.5 L 23.5,10.5' stroke='${themeCheckbox.fillSelected}' stroke-width='2.6' fill='none'/>
-</svg>`
-    .replace(/(\r\n|\r|\n)/g, "")
-    .replace(/\s+</g, "<")
-    .trim();
+</svg>`);
 
   const checkboxClasses = [
     // TODO: rename "__field"?

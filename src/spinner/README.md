@@ -1,4 +1,4 @@
-## Spinner
+##
 
 ```html
 <script>

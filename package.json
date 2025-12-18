@@ -9,14 +9,17 @@
     "./label.css": "./dist/label.css",
     "./spinner.css": "./dist/spinner.css",
     "./text-input.css": "./dist/text-input.css",
-    "./checkbox.css": "./dist/checkbox.css"
+    "./checkbox.css": "./dist/checkbox.css",
+    "./select.css": "./dist/select.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "node ./scripts/run-generators.js",
-    "build-watch": "node ./scripts/run-generators-watch.js"
+    "build-watch": "node ./scripts/run-generators-watch.js",
+    "dev": "concurrently \"npm run build-watch\" \"vite\"",
+    "vite": "vite"
   },
   "license": "ISC",
   "devDependencies": {
@@ -24,6 +27,8 @@
     "@guardian/source": "^11.1.0",
     "@prettier/sync": "^0.6.1",
     "autoprefixer": "^10.4.21",
+    "baseline-browser-mapping": "^2.9.10",
+    "concurrently": "^9.1.2",
     "esbuild": "^0.25.8",
     "hint": "^7.1.13",
     "jsdom": "^26.1.0",
@@ -31,6 +36,8 @@
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-nested": "^7.0.2",
     "prettier": "^3.6.2",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "shiki": "^3.20.0",
+    "vite": "^6.3.5"
   }
 }

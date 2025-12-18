@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Source Components</title>
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/dist/button.css" />
+    <link rel="stylesheet" href="/dist/checkbox.css" />
+    <link rel="stylesheet" href="/dist/icons.css" />
+    <link rel="stylesheet" href="/dist/label.css" />
+    <link rel="stylesheet" href="/dist/spinner.css" />
+    <link rel="stylesheet" href="/dist/text-input.css" />
+    <link rel="stylesheet" href="/dist/select.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue",
+          Helvetica, Arial, sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #f6f6f6;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+      legend {
+        font-weight: bold;
+        font-size: 0.75rem;
+        color: #707070;
+        margin-bottom: 0.25rem;
+      }
+      label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        margin-right: 0.75rem;
+        font-size: 0.875rem;
+        cursor: pointer;
+      }
+    </style>
+
+    <script type="module" src="./playground.js"></script>
+  </head>
+  <body>
+    <h1>Interactive Source Components</h1>
+
+    <!-- Button -->
+    <component-playground name="Button">
+      <button slot="preview" class="src-button">Click me</button>
+
+      <template slot="code">
+        <button class="src-button">Click me</button>
+      </template>
+
+      <fieldset slot="controls" data-target=".src-button">
+        <legend>Priority</legend>
+        <label>
+          <input type="radio" name="btn-priority" value="" checked />
+          Primary
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="btn-priority"
+            value="src-button--secondary"
+          />
+          Secondary
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="btn-priority"
+            value="src-button--tertiary"
+          />
+          Tertiary
+        </label>
+        <label>
+          <input type="radio" name="btn-priority" value="src-button--subdued" />
+          Subdued
+        </label>
+      </fieldset>
+
+      <fieldset slot="controls" data-target=".src-button">
+        <legend>Size</legend>
+        <label>
+          <input type="radio" name="btn-size" value="" checked />
+          Medium
+        </label>
+        <label>
+          <input type="radio" name="btn-size" value="src-button--small" />
+          Small
+        </label>
+        <label>
+          <input type="radio" name="btn-size" value="src-button--xsmall" />
+          Extra small
+        </label>
+      </fieldset>
+    </component-playground>
+
+    <!-- Spinner -->
+    <component-playground name="Spinner">
+      <div
+        slot="preview"
+        class="src-spinner"
+        role="status"
+        aria-label="Loading"
+      ></div>
+
+      <template slot="code">
+        <div class="src-spinner" role="status" aria-label="Loading"></div>
+      </template>
+
+      <fieldset slot="controls" data-target=".src-spinner">
+        <legend>Size</legend>
+        <label>
+          <input type="radio" name="spinner-size" value="" checked />
+          Medium
+        </label>
+        <label>
+          <input type="radio" name="spinner-size" value="src-spinner--small" />
+          Small
+        </label>
+        <label>
+          <input type="radio" name="spinner-size" value="src-spinner--xsmall" />
+          Extra small
+        </label>
+      </fieldset>
+    </component-playground>
+
+    <!-- Text Input -->
+    <component-playground name="Text Input">
+      <div slot="preview" style="width: 100%">
+        <label for="demo-input" class="src-label">
+          Email address
+          <div class="src-label__supporting">e.g. harpreet@example.com</div>
+        </label>
+        <input
+          type="email"
+          id="demo-input"
+          class="src-text-input"
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <template slot="code">
+        <label for="email" class="src-label">
+          Email address
+          <div class="src-label__supporting">e.g. harpreet@example.com</div>
+        </label>
+        <input type="email" id="email" class="src-text-input" />
+      </template>
+
+      <fieldset slot="controls" data-target=".src-text-input">
+        <legend>Size</legend>
+        <label>
+          <input type="radio" name="input-size" value="" checked />
+          Medium
+        </label>
+        <label>
+          <input type="radio" name="input-size" value="src-text-input--small" />
+          Small
+        </label>
+      </fieldset>
+
+      <fieldset slot="controls" data-target=".src-text-input">
+        <legend>Width</legend>
+        <label>
+          <input type="radio" name="input-width" value="" checked />
+          Fluid
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="input-width"
+            value="src-text-input--width-30"
+          />
+          30 chars
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="input-width"
+            value="src-text-input--width-10"
+          />
+          10 chars
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="input-width"
+            value="src-text-input--width-4"
+          />
+          4 chars
+        </label>
+      </fieldset>
+    </component-playground>
+
+    <!-- Label -->
+    <component-playground name="Label">
+      <label slot="preview" for="label-demo" class="src-label">
+        Email address
+      </label>
+
+      <template slot="code">
+        <label for="email" class="src-label">Email address</label>
+      </template>
+
+      <fieldset slot="controls" data-target=".src-label">
+        <legend>Size</legend>
+        <label>
+          <input type="radio" name="label-size" value="" checked />
+          Medium
+        </label>
+        <label>
+          <input type="radio" name="label-size" value="src-label--small" />
+          Small
+        </label>
+      </fieldset>
+    </component-playground>
+
+    <!-- Checkbox -->
+    <component-playground name="Checkbox">
+      <div slot="preview" class="src-checkbox__container">
+        <input type="checkbox" id="demo-checkbox" class="src-checkbox" />
+        <label for="demo-checkbox" class="src-label">
+          Subscribe to newsletter
+        </label>
+      </div>
+
+      <template slot="code">
+        <div class="src-checkbox__container">
+          <input type="checkbox" id="newsletter" class="src-checkbox" />
+          <label for="newsletter" class="src-label">
+            Subscribe to newsletter
+          </label>
+        </div>
+      </template>
+    </component-playground>
+
+    <!-- Select -->
+    <component-playground name="Select">
+      <div slot="preview" style="width: 100%">
+        <label for="demo-select" class="src-label">
+          Country
+          <div class="src-label__supporting">Select your country</div>
+        </label>
+        <div class="src-select__wrapper">
+          <select id="demo-select" class="src-select">
+            <option value="">Choose an option</option>
+            <option value="uk">United Kingdom</option>
+            <option value="us">United States</option>
+            <option value="au">Australia</option>
+          </select>
+        </div>
+      </div>
+
+      <template slot="code">
+        <label for="country" class="src-label">
+          Country
+          <div class="src-label__supporting">Select your country</div>
+        </label>
+        <div class="src-select__wrapper">
+          <select id="country" class="src-select">
+            <option value="">Choose an option</option>
+            <option value="uk">United Kingdom</option>
+          </select>
+        </div>
+      </template>
+    </component-playground>
+
+    <!-- Icons -->
+    <icon-playground></icon-playground>
+  </body>
+</html>

@@ -39,7 +39,7 @@ import {
     [
       // TODO: can we do without :has?
       "src-text-input",
-      `label:has(.src-label) + .src-text-input {\n` +
+      `label:.src-label + .src-text-input {\n` +
         `${context.labelMargin.styles}` +
         `}\n`,
     ],

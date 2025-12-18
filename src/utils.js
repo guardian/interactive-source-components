@@ -164,6 +164,19 @@ export async function tidyCss(css) {
   return css;
 }
 
+/** @param {string} css */
+export async function parseCss(css) {
+  return postcss.parse(css);
+}
+
+/** @param {string} markup */
+export function removeBacktickMarkupWhitespace(markup) {
+  return markup
+    .replace(/(\r\n|\r|\n)/g, "")
+    .replace(/\s+</g, "<")
+    .trim();
+}
+
 /**
  * @param {string} camelCaseName
  */
