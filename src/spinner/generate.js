@@ -55,22 +55,19 @@ import {
         `\t100% { transform: rotate(360deg); }\n` +
         `}\n` +
         `@keyframes spinnerSegmentRotate {\n` +
-        `\t0%   { transform: rotate(0deg); }\n` +
-        `\t50%  { transform: rotate(360deg); }\n` +
-        `\t100% { transform: rotate(360deg); }\n` +
+        `\t0% { transform: rotate(0deg); }\n` +
+        `\t50%,100% { transform: rotate(360deg); }\n` +
         `}\n` +
         // TODO: can we combine these two zCycle keyframes?
         `@keyframes spinnerZIndexCycle1 {\n` +
         `\t0% { z-index: 2; }\n` +
-        `\t25% { z-index: 1; }\n` +
-        `\t75% { z-index: 1; }\n` +
+        `\t25%,75% { z-index: 1; }\n` +
         `\t100% { z-index: 2; }\n` +
         `}\n` +
         `@keyframes spinnerZIndexCycle2 {\n` +
         `\t0% { z-index: 1; }\n` +
         `\t25% { z-index: 2; }\n` +
-        `\t75% { z-index: 1; }\n` +
-        `\t100% { z-index: 1; }\n` +
+        `\t75%,100% { z-index: 1; }\n` +
         `}\n`,
     ],
   ];
