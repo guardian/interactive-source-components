@@ -39,13 +39,15 @@ import {
     [
       // TODO: can we do without :has?
       "src-text-input",
-      `label:.src-label + .src-text-input {\n` +
+      `label.src-label + .src-text-input,\n` +
+        `label.src-label + :has(> .src-text-input) {\n` +
         `${context.labelMargin.styles}` +
         `}\n`,
     ],
     [
       "src-text-input",
-      `label:has(.src-label__supporting) + .src-text-input {\n` +
+      `label:has(.src-label__supporting) + .src-text-input,` +
+        `label:has(.src-label__supporting) + :has(> .src-text-input) {\n` +
         `${context.supportingTextMargin.styles}` +
         `}\n`,
     ],

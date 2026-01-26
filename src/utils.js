@@ -193,6 +193,7 @@ export function camelToKebab(camelCaseName) {
  */
 export async function writeLabelClasses(decls, distPath) {
   let css = "";
+  let scss = "";
 
   decls.forEach((decl) => {
     // TODO: remove this once we've removed classTuple

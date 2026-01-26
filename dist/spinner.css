@@ -59,9 +59,7 @@
   0% {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(360deg);
-  }
+  50%,
   100% {
     transform: rotate(360deg);
   }
@@ -70,9 +68,7 @@
   0% {
     z-index: 2;
   }
-  25% {
-    z-index: 1;
-  }
+  25%,
   75% {
     z-index: 1;
   }
@@ -87,9 +83,7 @@
   25% {
     z-index: 2;
   }
-  75% {
-    z-index: 1;
-  }
+  75%,
   100% {
     z-index: 1;
   }
