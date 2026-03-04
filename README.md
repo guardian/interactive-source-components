@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **This repo is archived. Components have been moved into [interactive-style-library](https://github.com/guardian/interactive-style-library/tree/main/src), where development continues.**
+
 # Interactive Source components
 
 An NPM package containing simplified CSS-only versions of the React components made available in the [@guardian/source](https://github.com/guardian/csnx/tree/main/libs/%40guardian/source) library.
